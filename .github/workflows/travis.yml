@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Test project
-        run: ./.github/workflows/test.shx
+        run: ./.github/workflows/test.sh
