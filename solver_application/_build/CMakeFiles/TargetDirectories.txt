@@ -1,0 +1,4 @@
+/Users/mihailerosenko/z1qnezt/workspace/tasks/lab03/solver_application/_build/CMakeFiles/solver_lib.dir
+/Users/mihailerosenko/z1qnezt/workspace/tasks/lab03/solver_application/_build/CMakeFiles/solver.dir
+/Users/mihailerosenko/z1qnezt/workspace/tasks/lab03/solver_application/_build/CMakeFiles/edit_cache.dir
+/Users/mihailerosenko/z1qnezt/workspace/tasks/lab03/solver_application/_build/CMakeFiles/rebuild_cache.dir
