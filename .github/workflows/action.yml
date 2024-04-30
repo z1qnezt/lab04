@@ -1,0 +1,10 @@
+name: actions
+run-name: z1qnezt is running project
+on: [push]фсе
+jobs:
+  container-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test project
+        run: ./.github/workflows/test.sh
