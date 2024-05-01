@@ -409,3 +409,70 @@ cmake --build _build
 [100%] Linking CXX executable solver
 [100%] Built target solver
 ```
+### LAB04:
+## action.yml:
+```
+name: action
+on: [push]
+jobs:
+  container-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: /Users/mihailerosenko/z1qnezt/workspace/projects/lab04
+          key: ${{ runner.os }}-dependencies-${{ hashFiles('**/lockfiles') }}
+      - name: Test project
+        run: ./.github/workflows/test.sh
+```
+## test.sh:
+```
+root=./
+cmake --build $root/formatter_lib
+cmake --build $root/formatter_ex_lib
+cmake --build $root/hello_world_application
+cmake --build $root/solver_lib
+cmake --build $root/solver_application
+
+$root/hello_world_application/_build/main
+echo -e '1\n2\n1' | $root/solver_application/_build/main
+```
+## Выдаем права:
+```bash
+chmod +x test.sh
+```
+```bash
+chmod +x action.yml
+```
+```bash
+chmod +x /Users/mihailerosenko/z1qnezt/workspace/projects/lab04/solver_application/_build/main
+```
+```bash
+chmod +x /Users/mihailerosenko/z1qnezt/workspace/projects/lab04/hello_world_application/_build/main
+```
+## Запуск test.sh:
+```bash
+.github/workflows/test.sh
+```
+## Вывод:
+```
+Error: could not load cache
+Error: could not load cache
+Error: could not load cache
+Error: could not load cache
+Error: could not load cache
+-------------------------
+hello, world!
+-------------------------
+-------------------------
+x1 = nan
+-------------------------
+-------------------------
+x2 = nan
+-------------------------
+```
+
+
